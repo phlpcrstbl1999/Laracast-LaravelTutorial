@@ -17,6 +17,13 @@ Route::get('/', function () {
     return view('posts');
 });
 
-Route::get('post', function() {
-    return view('post');
+Route::get('posts/{post}', function($post) {
+    $path = __DIR__ . "/../resources/posts/{$post}.html";
+    if(!file_exists($path)) {
+        return redirect('/');
+    }
+    $post = file_get_contents($path);
+    return view('post', [
+        'post' => $post
+    ]); 
 });
