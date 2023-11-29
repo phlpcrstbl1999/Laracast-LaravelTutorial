@@ -8,8 +8,8 @@
         <article>
             <h1>
             <a href="/posts/<?= $post->slug; ?>">
-                <?=$post->title; ?></h1>
-            </a>
+                <?=$post->title; ?>
+            </a></h1>
             <div><?=$post->body; ?></div>
         </article>
         <?php endforeach; ?>
